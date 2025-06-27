@@ -21,13 +21,27 @@ export default function Home() {
 
     setError('')
     const number = parseInt(input)
-    const result: string[] = []
+    let result: string[] = []
 
     if (type === 'segitiga') {
-      for (let i = 1; i <= input.length; i++) {
-        const row = input.slice(0, i).padEnd(input.length, '0')
-        result.push(row)
+      const resultTemp: string[] = []
+      let i = 1
+      let index = 0
+
+      while (index < input.length) {
+        const group = input.slice(index, index + i)
+        resultTemp.push(group)
+        index += i
+        i++
       }
+
+      // Lanjutkan menampilkan baris nol setelah input habis
+      while (i <= 6) {
+        resultTemp.push('0'.repeat(i))
+        i++
+      }
+
+      result = resultTemp
     }
 
     if (type === 'ganjil') {

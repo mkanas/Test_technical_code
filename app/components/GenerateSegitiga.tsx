@@ -9,7 +9,7 @@ const GenerateSegitiga = ({ onClick }: Props) => {
     <div>
       <button
         onClick={onClick}
-        className=" bg-green-400 rounded cursor-pointer  p-2 "
+        className=" bg-green-400 rounded cursor-pointer p-2 "
         type="submit"
       >
         Generate Segitiga
